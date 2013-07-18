@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DC8F3728-0326-4B2D-87A0-42520184DF53}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Lotus</RootNamespace>
+    <AssemblyName>Lotus</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Authentification\GroupName.cs" />
+    <Compile Include="Authentification\Permissions.cs" />
+    <Compile Include="Authentification\SecurityManager.cs" />
+    <Compile Include="Base\NetworkClient.cs" />
+    <Compile Include="Base\NetworkHost.cs" />
+    <Compile Include="Base\Client.cs" />
+    <Compile Include="ClientBase.cs" />
+    <Compile Include="Core\Handlers\ClientExceptionHandler.cs" />
+    <Compile Include="Core\Handlers\ClientMethodHandler.cs" />
+    <Compile Include="Core\DataHandler.cs" />
+    <Compile Include="EventArgs\ClientEventArgs.cs" />
+    <Compile Include="Authentification\Group.cs" />
+    <Compile Include="Base\Host.cs" />
+    <Compile Include="Base\IClient.cs" />
+    <Compile Include="Base\IConnection.cs" />
+    <Compile Include="Core\IExecutionContext.cs" />
+    <Compile Include="Base\IHost.cs" />
+    <Compile Include="Authentification\PermissionMode.cs" />
+    <Compile Include="Core\Method\FluentMethod.cs" />
+    <Compile Include="Core\Property\FluentProperty.cs" />
+    <Compile Include="HostBase.cs" />
+    <Compile Include="Core\Attributes\NetworkPropertyAttribute.cs" />
+    <Compile Include="Core\Property\NetworkPropertySetter.cs" />
+    <Compile Include="Core\Property\NetworkPropertyGetter.cs" />
+    <Compile Include="Core\Handlers\HostMethodHandler.cs" />
+    <Compile Include="Core\Handlers\PropertyHandler.cs" />
+    <Compile Include="Core\Handlers\HostLoginRequestHandler.cs" />
+    <Compile Include="Core\ISecurityContext.cs" />
+    <Compile Include="Core\Property\IPropertyAction.cs" />
+    <Compile Include="Serialization\ISerializable.cs" />
+    <Compile Include="Serialization\ISerializer.cs" />
+    <Compile Include="Protocols\Local\LocalClient.cs" />
+    <Compile Include="Protocols\Local\LocalConnection.cs" />
+    <Compile Include="Protocols\Local\LocalHost.cs" />
+    <Compile Include="Protocols\Local\LocalStream.cs" />
+    <Compile Include="Authentification\LoginRequest.cs" />
+    <Compile Include="Network.cs" />
+    <Compile Include="Core\Attributes\NetworkMethodAttribute.cs" />
+    <Compile Include="Core\Method\NetworkMethod.cs" />
+    <Compile Include="Core\NetworkObject.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EventArgs\RecievedDataEventArgs.cs" />
+    <Compile Include="Core\Attributes\RequirePermissionsAttribute.cs" />
+    <Compile Include="Serialization\BinarySerializer.cs" />
+    <Compile Include="Serialization\CompressedSerializer.cs" />
+    <Compile Include="Serialization\LocalSerializer.cs" />
+    <Compile Include="Serialization\TinySerializer.cs" />
+    <Compile Include="Serialization\XmlSerializer.cs" />
+    <Compile Include="Common\Singleton.cs" />
+    <Compile Include="Protocols\TCP\TcpClient.cs" />
+    <Compile Include="Protocols\TCP\TcpConnection.cs" />
+    <Compile Include="Protocols\TCP\TcpHost.cs" />
+    <Compile Include="Common\Extensions.cs" />
+    <Compile Include="Authentification\User.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
